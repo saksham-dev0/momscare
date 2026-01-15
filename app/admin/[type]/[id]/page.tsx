@@ -317,7 +317,7 @@ export default function AdminDetailPage() {
                 </div>
               </div>
 
-              {type === "nurses" && (
+              {type === "nurses" && "gender" in data && (
                 <div className="space-y-1">
                   <label className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">
                     Gender
@@ -334,7 +334,7 @@ export default function AdminDetailPage() {
               Professional Information
             </h2>
 
-            {type === "doctors" ? (
+            {type === "doctors" && "medicalQualification" in data ? (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-1">
@@ -399,7 +399,7 @@ export default function AdminDetailPage() {
                     <p className="text-sm text-zinc-900 dark:text-white">24/7 Available</p>
                   ) : (
                     <div className="mt-2 space-y-2">
-                      {data.availability.days.map((day) => (
+                      {data.availability.days.map((day: string) => (
                         <div key={day} className="flex items-center gap-3 text-sm">
                           <span className="text-zinc-900 dark:text-white font-medium min-w-[100px]">
                             {DAYS_OF_WEEK.find((d) => d.toLowerCase() === day) || day}
@@ -415,7 +415,7 @@ export default function AdminDetailPage() {
                   )}
                 </div>
               </>
-            ) : (
+            ) : type === "nurses" && "nursingQualification" in data ? (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-1">
@@ -477,7 +477,7 @@ export default function AdminDetailPage() {
                     Languages Known
                   </label>
                   <div className="flex flex-wrap gap-2 mt-2">
-                    {data.languagesKnown.map((language) => (
+                    {data.languagesKnown.map((language: string) => (
                       <span
                         key={language}
                         className="px-3 py-1 rounded-lg text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300"
@@ -488,7 +488,7 @@ export default function AdminDetailPage() {
                   </div>
                 </div>
               </>
-            )}
+            ) : null}
           </div>
 
           {/* Document Viewer */}
