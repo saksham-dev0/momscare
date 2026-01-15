@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
+import { ConvexClientProvider } from "@/lib/ConvexClientProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,8 +17,8 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "MicAyla | Partners in Economic & Ecosocial Empowerment",
-  description: "Global Asset Management focused on impactful projects and acquisitions",
+  title: "Moms Care On Call | Professional Maternal Care at Your Doorstep",
+  description: "Professional maternal care at your doorstep in 10 minutes. Designed for Bengaluru's nuclear families, providing peace of mind for both of you.",
 };
 
 export default function RootLayout({
@@ -30,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${newsreader.variable} antialiased bg-zinc-50 dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400 font-sans`}
       >
+        <ConvexClientProvider>
         {children}
+        </ConvexClientProvider>
       </body>
     </html>
   );
