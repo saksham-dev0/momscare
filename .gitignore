@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# convex
+.cursor/
+
 # next.js
 /.next/
 /out/

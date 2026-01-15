@@ -271,3 +271,18 @@
 .dark .bg-spotlight {
   background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.03), transparent 40%);
 }
+
+/* Native time input clock icon dark mode fix */
+.dark input[type="time"] {
+  color: #ffffff;
+}
+
+.dark input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.dark input[type="time"]::-moz-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}

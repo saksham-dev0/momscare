@@ -379,7 +379,7 @@ export default function Page() {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row md:items-center gap-4 z-10 lg:justify-end pb-4">
               <a
-                href="#contact"
+                href="/partners"
                 className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-teal-600 dark:bg-teal-400 px-8 font-medium text-white dark:text-zinc-950 transition-all duration-300 hover:bg-teal-700 dark:hover:bg-teal-300"
               >
                 <span className="mr-2 text-sm">Partner With Us</span>
