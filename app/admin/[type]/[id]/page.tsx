@@ -35,6 +35,9 @@ const DAYS_OF_WEEK = [
   "Sunday",
 ];
 
+// Force dynamic rendering to prevent prerendering during build
+export const dynamic = 'force-dynamic';
+
 export default function AdminDetailPage() {
   const [isDark, setIsDark] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);

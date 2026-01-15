@@ -20,6 +20,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Id } from "@/convex/_generated/dataModel";
 
+// Force dynamic rendering to prevent prerendering during build
+export const dynamic = 'force-dynamic';
+
 export default function AdminDashboard() {
   const [isDark, setIsDark] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
